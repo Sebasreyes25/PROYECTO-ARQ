@@ -1,0 +1,7 @@
+# Ignorar todo excepto lo que se necesita
+*
+!.mvn/
+!mvnw
+!mvnw.cmd
+!pom.xml
+!src/

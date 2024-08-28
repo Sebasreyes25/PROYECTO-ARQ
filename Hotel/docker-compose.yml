@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend/sistema-hoteles-be
+    ports:
+      - "8081:8080"
+    networks:
+      - hotel-network
+
+  frontend:
+    build: ./frontend/sistema_hoteles
+    ports:
+      - "3000:80"
+    networks:
+      - hotel-network
+
+networks:
+  hotel-network:
+    driver: bridge
