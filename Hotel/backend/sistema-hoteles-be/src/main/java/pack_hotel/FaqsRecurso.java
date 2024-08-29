@@ -94,4 +94,5 @@ public class FaqsRecurso {
         }
         return Response.status(Response.Status.NO_CONTENT).build();
  }
+ 
 }
