@@ -47,4 +47,3 @@ jobs:
           -Dsonar.projectKey=Sebasreyes25_PROYECTO-ARQ_AZGbWDf3MTMJDWtiM_pe \
           -Dsonar.host.url=$SONAR_HOST_URL \
           -Dsonar.login=$SONAR_TOKEN
-
