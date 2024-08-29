@@ -89,6 +89,9 @@ public class FaqsRecurso {
         if (!eliminado) {
             throw new WebApplicationException("Faq con id " + id + " no encontrada o no pudo ser eliminada", Response.Status.NOT_FOUND);
         }
+        if(true){
+            int num = 2;
+        }
         return Response.status(Response.Status.NO_CONTENT).build();
-    }
+ }
 }
