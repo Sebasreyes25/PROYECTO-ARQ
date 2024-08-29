@@ -1,4 +1,4 @@
-2024-05-04 12:44:00,709 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] WARN  [org.hib.too.sch.int.ExceptionHandlerLoggedImpl] (JPA Startup Thread) GenerationTarget encountered exception accepting command : Error executing DDL "alter table Faqs modify respuesta varchar2(255 char)" via JDBC [ORA-22859: invalid modification of columns
+2024-05-04 13:53:38,673 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] WARN  [org.hib.too.sch.int.ExceptionHandlerLoggedImpl] (JPA Startup Thread) GenerationTarget encountered exception accepting command : Error executing DDL "alter table Faqs modify respuesta varchar2(255 char)" via JDBC [ORA-22859: invalid modification of columns
 
 https://docs.oracle.com/error-help/db/ora-22859/]: org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table Faqs modify respuesta varchar2(255 char)" via JDBC [ORA-22859: invalid modification of columns
 
@@ -48,33 +48,32 @@ Caused by: Error : 22859, Position : 24, SQL = alter table Faqs modify respuesta
 	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:710)
 	... 34 more
 
-2024-05-04 12:44:04,044 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [io.quarkus] (Quarkus Main Thread) sistema-hoteles-be 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.7.4) started in 42.696s. Listening on: http://localhost:8080
-2024-05-04 12:44:04,049 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2024-05-04 12:44:04,051 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, jdbc-oracle, narayana-jta, resteasy-client, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, vertx]
-2024-05-04 12:45:54,629 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@1f900eb5)
-2024-05-04 12:45:54,630 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) traceId=387CE24E. 
-2024-05-04 12:45:54,632 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) Session Attributes: 
+2024-05-04 13:53:39,922 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [io.quarkus] (Quarkus Main Thread) sistema-hoteles-be 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.7.4) started in 48.065s. Listening on: http://localhost:8080
+2024-05-04 13:53:39,923 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2024-05-04 13:53:39,923 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, jdbc-oracle, narayana-jta, resteasy-client, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, vertx]
+2024-05-04 13:55:06,902 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@6d6d508d)
+2024-05-04 13:55:06,903 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=5139AC5B. 
+2024-05-04 13:55:06,905 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Session Attributes: 
 sdu=8192, tdu=2097152
 nt: host=35.211.214.127, port=1521, socketOptions={0=YES, 1=NO, 17=0, 18=false, 2=0, 20=true, 38=TLS, 23=40, 24=50, 40=false, 25=0}
     socket=null
 client profile={oracle.net.encryption_types_client=(), oracle.net.crypto_seed=, oracle.net.authentication_services=(), oracle.net.setFIPSMode=false, oracle.net.kerberos5_mutual_authentication=false, oracle.net.encryption_client=ACCEPTED, oracle.net.crypto_checksum_client=ACCEPTED, oracle.net.crypto_checksum_types_client=()}
 connection options=[host=35.211.214.127 port=1521 protocol=TCP service_name=HOTPDB1 addr=(ADDRESS=(PROTOCOL=TCP)(HOST=35.211.214.127)(PORT=1521)) conn_data=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(PORT=1521)(HOST=35.211.214.127))(CONNECT_DATA=(CID=(PROGRAM=JDBC Thin Client)(HOST=sebastian-virtual-machine)(USER=sebastian))(SERVICE_NAME=HOTPDB1))) done=true]
 onBreakReset=false, dataEOF=false, negotiatedOptions=0x841, connected=false
-2024-05-04 12:45:54,633 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) traceId=387CE24E, anoEnabled=true. 
-2024-05-04 12:45:54,634 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
-2024-05-04 12:45:54,635 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 8 bytes
-2024-05-04 12:45:54,636 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) Got Resend, SessionTraceId = 387CE24E
-2024-05-04 12:45:54,637 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
-2024-05-04 12:45:54,638 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 45 bytes
-2024-05-04 12:45:54,639 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) Connection established. Cleared conn strategy stack
-2024-05-04 12:45:54,640 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 11 bytes written to the Socket.
-2024-05-04 12:45:54,641 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) Sending break marker, SessionTraceId = 387CE24E
-2024-05-04 12:45:54,642 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 33 bytes written to the Socket.
-2024-05-04 12:45:54,643 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 254 bytes
-2024-05-04 12:45:54,644 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 2,771 bytes written to the Socket.
-2024-05-04 12:45:55,620 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 2,705 bytes
-2024-05-04 12:45:55,621 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] FINEST [ora.jdbc] (agroal-11) 183 bytes written to the Socket.
-2024-05-04 12:45:55,624 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) throwing: java.sql.SQLRecoverableException: ORA-17002: I/O error: Socket read interrupted, Authentication lapse 41 ms.
+2024-05-04 13:55:06,906 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=5139AC5B, anoEnabled=true. 
+2024-05-04 13:55:06,907 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 13:55:06,908 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 8 bytes
+2024-05-04 13:55:06,909 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Got Resend, SessionTraceId = 5139AC5B
+2024-05-04 13:55:06,910 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 13:55:07,884 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 45 bytes
+2024-05-04 13:55:07,885 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Connection established. Cleared conn strategy stack
+2024-05-04 13:55:07,886 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 11 bytes written to the Socket.
+2024-05-04 13:55:07,887 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Sending break marker, SessionTraceId = 5139AC5B
+2024-05-04 13:55:07,888 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 33 bytes written to the Socket.
+2024-05-04 13:55:07,889 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 10 bytes
+2024-05-04 13:55:07,890 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 244 bytes
+2024-05-04 13:55:07,891 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,771 bytes written to the Socket.
+2024-05-04 13:55:07,893 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) throwing: java.sql.SQLRecoverableException: ORA-17002: I/O error: Socket read interrupted, Authentication lapse 0 ms.
 https://docs.oracle.com/error-help/db/ora-17002/
 	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1441)
 	at oracle.jdbc.driver.T4CConnection.handleLogonInterruptedIOException(T4CConnection.java:1309)
@@ -91,7 +90,77 @@ https://docs.oracle.com/error-help/db/ora-17002/
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.io.IOException: Socket read interrupted, Authentication lapse 41 ms.
+Caused by: java.io.IOException: Socket read interrupted, Authentication lapse 0 ms.
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1436)
+	... 14 more
+Caused by: java.io.InterruptedIOException: Socket read interrupted
+	at oracle.net.nt.TimeoutSocketChannel.doSelect(TimeoutSocketChannel.java:706)
+	at oracle.net.nt.TimeoutSocketChannel.doSelectForRead(TimeoutSocketChannel.java:599)
+	at oracle.net.nt.TimeoutSocketChannel.read(TimeoutSocketChannel.java:501)
+	at oracle.net.ns.NSProtocolNIO.doSocketRead(NSProtocolNIO.java:1228)
+	at oracle.net.ns.NIOPacket.readHeader(NIOPacket.java:271)
+	at oracle.net.ns.NIOPacket.readPacketFromSocketChannel(NIOPacket.java:204)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:147)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:120)
+	at oracle.net.ns.NIONSDataChannel.readDataFromSocketChannel(NIONSDataChannel.java:105)
+	at oracle.jdbc.driver.T4CMAREngineNIO.prepareForUnmarshall(T4CMAREngineNIO.java:893)
+	at oracle.jdbc.driver.T4CMAREngineNIO.unmarshalUB1(T4CMAREngineNIO.java:464)
+	at oracle.jdbc.driver.T4C8TTIdty.receivePacket(T4C8TTIdty.java:891)
+	at oracle.jdbc.driver.T4C8TTIdty.doRPC(T4C8TTIdty.java:751)
+	at oracle.jdbc.driver.T4CConnection.negotiateSession(T4CConnection.java:3290)
+	at oracle.jdbc.driver.T4CConnection.negotiateTTC(T4CConnection.java:831)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:967)
+	... 12 more
+
+2024-05-04 13:55:07,894 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) properties={LOCALE=en_US, DriverVersion=23.3.0.23.09, java.library.path: =/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.class.path: =/home/sebastian/Documents/Proyecto-B2B/Hotel/backend/sistema-hoteles-be/target/sistema-hoteles-be-dev.jar, java.version: =21.0.2}. 
+2024-05-04 13:55:08,233 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': ORA-17002: I/O error: Socket read interrupted, Authentication lapse 0 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+2024-05-04 15:04:11,425 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-111) Inicio del proceso de creación de reserva. Fecha de ingreso: 2024-05-10, Fecha de salida: 2024-05-15
+2024-05-04 15:04:11,749 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-111) No se encontraron conflictos con otras reservas. Procediendo con la creación de la reserva.
+2024-05-04 15:04:11,886 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-111) Habitación encontrada. Tipo de habitación obtenido: 1
+2024-05-04 15:04:12,019 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-111) Reserva creada con éxito. ID de la reserva: 1105
+2024-05-04 15:19:20,893 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@347fe22b)
+2024-05-04 15:19:20,894 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=311FF01F. 
+2024-05-04 15:19:20,896 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Session Attributes: 
+sdu=8192, tdu=2097152
+nt: host=35.211.214.127, port=1521, socketOptions={0=YES, 1=NO, 17=0, 18=false, 2=0, 20=true, 38=TLS, 23=40, 24=50, 40=false, 25=0}
+    socket=null
+client profile={oracle.net.encryption_types_client=(), oracle.net.crypto_seed=, oracle.net.authentication_services=(), oracle.net.setFIPSMode=false, oracle.net.kerberos5_mutual_authentication=false, oracle.net.encryption_client=ACCEPTED, oracle.net.crypto_checksum_client=ACCEPTED, oracle.net.crypto_checksum_types_client=()}
+connection options=[host=35.211.214.127 port=1521 protocol=TCP service_name=HOTPDB1 addr=(ADDRESS=(PROTOCOL=TCP)(HOST=35.211.214.127)(PORT=1521)) conn_data=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(PORT=1521)(HOST=35.211.214.127))(CONNECT_DATA=(CID=(PROGRAM=JDBC Thin Client)(HOST=sebastian-virtual-machine)(USER=sebastian))(SERVICE_NAME=HOTPDB1))) done=true]
+onBreakReset=false, dataEOF=false, negotiatedOptions=0x841, connected=false
+2024-05-04 15:19:20,897 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=311FF01F, anoEnabled=true. 
+2024-05-04 15:19:20,898 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 15:19:20,899 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 8 bytes
+2024-05-04 15:19:20,900 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Got Resend, SessionTraceId = 311FF01F
+2024-05-04 15:19:20,901 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 15:19:20,902 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 45 bytes
+2024-05-04 15:19:20,903 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Connection established. Cleared conn strategy stack
+2024-05-04 15:19:20,904 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 11 bytes written to the Socket.
+2024-05-04 15:19:20,905 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Sending break marker, SessionTraceId = 311FF01F
+2024-05-04 15:19:20,906 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 33 bytes written to the Socket.
+2024-05-04 15:19:21,885 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 10 bytes
+2024-05-04 15:19:21,886 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 244 bytes
+2024-05-04 15:19:21,887 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,771 bytes written to the Socket.
+2024-05-04 15:19:21,888 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,705 bytes
+2024-05-04 15:19:21,889 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 183 bytes written to the Socket.
+2024-05-04 15:19:21,891 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) throwing: java.sql.SQLRecoverableException: ORA-17002: I/O error: Socket read interrupted, Authentication lapse 93 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1441)
+	at oracle.jdbc.driver.T4CConnection.handleLogonInterruptedIOException(T4CConnection.java:1309)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:986)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1157)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:104)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:825)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:651)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: Socket read interrupted, Authentication lapse 93 ms.
 	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1436)
 	... 14 more
 Caused by: java.io.InterruptedIOException: Socket read interrupted
@@ -114,7 +183,150 @@ Caused by: java.io.InterruptedIOException: Socket read interrupted
 	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:976)
 	... 12 more
 
-2024-05-04 12:45:55,625 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [ora.jdbc] (agroal-11) properties={LOCALE=en_US, DriverVersion=23.3.0.23.09, java.library.path: =/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.class.path: =/home/sebastian/Documents/Proyecto-B2B/Hotel/backend/sistema-hoteles-be/target/sistema-hoteles-be-dev.jar, java.version: =21.0.2}. 
-2024-05-04 12:45:55,873 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': ORA-17002: I/O error: Socket read interrupted, Authentication lapse 41 ms.
+2024-05-04 15:19:21,892 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) properties={LOCALE=en_US, DriverVersion=23.3.0.23.09, java.library.path: =/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.class.path: =/home/sebastian/Documents/Proyecto-B2B/Hotel/backend/sistema-hoteles-be/target/sistema-hoteles-be-dev.jar, java.version: =21.0.2}. 
+2024-05-04 15:19:22,467 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': ORA-17002: I/O error: Socket read interrupted, Authentication lapse 93 ms.
 https://docs.oracle.com/error-help/db/ora-17002/
-2024-05-04 12:58:45,512 sebastian-virtual-machine sistema-hoteles-be-dev.jar[9079] INFO  [io.quarkus] (Shutdown thread) sistema-hoteles-be stopped in 0.701s
+2024-05-04 15:33:23,192 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-157) Inicio del proceso de creación de reserva. Fecha de ingreso: 2024-05-10, Fecha de salida: 2024-05-15
+2024-05-04 15:33:23,272 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-157) No se encontraron conflictos con otras reservas. Procediendo con la creación de la reserva.
+2024-05-04 15:33:23,356 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-157) Habitación encontrada. Tipo de habitación obtenido: 4
+2024-05-04 15:33:23,435 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-157) Reserva creada con éxito. ID de la reserva: 1106
+2024-05-04 15:33:29,888 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@7e11d6a3)
+2024-05-04 15:33:29,889 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=3ADF186. 
+2024-05-04 15:33:29,890 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Session Attributes: 
+sdu=8192, tdu=2097152
+nt: host=35.211.214.127, port=1521, socketOptions={0=YES, 1=NO, 17=0, 18=false, 2=0, 20=true, 38=TLS, 23=40, 24=50, 40=false, 25=0}
+    socket=null
+client profile={oracle.net.encryption_types_client=(), oracle.net.crypto_seed=, oracle.net.authentication_services=(), oracle.net.setFIPSMode=false, oracle.net.kerberos5_mutual_authentication=false, oracle.net.encryption_client=ACCEPTED, oracle.net.crypto_checksum_client=ACCEPTED, oracle.net.crypto_checksum_types_client=()}
+connection options=[host=35.211.214.127 port=1521 protocol=TCP service_name=HOTPDB1 addr=(ADDRESS=(PROTOCOL=TCP)(HOST=35.211.214.127)(PORT=1521)) conn_data=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(PORT=1521)(HOST=35.211.214.127))(CONNECT_DATA=(CID=(PROGRAM=JDBC Thin Client)(HOST=sebastian-virtual-machine)(USER=sebastian))(SERVICE_NAME=HOTPDB1))) done=true]
+onBreakReset=false, dataEOF=false, negotiatedOptions=0x841, connected=false
+2024-05-04 15:33:29,891 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=3ADF186, anoEnabled=true. 
+2024-05-04 15:33:29,892 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 15:33:29,894 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 8 bytes
+2024-05-04 15:33:29,895 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Got Resend, SessionTraceId = 3ADF186
+2024-05-04 15:33:29,896 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 15:33:29,897 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 45 bytes
+2024-05-04 15:33:29,898 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Connection established. Cleared conn strategy stack
+2024-05-04 15:33:29,899 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 11 bytes written to the Socket.
+2024-05-04 15:33:29,900 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Sending break marker, SessionTraceId = 3ADF186
+2024-05-04 15:33:29,901 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 33 bytes written to the Socket.
+2024-05-04 15:33:30,885 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 254 bytes
+2024-05-04 15:33:30,886 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,771 bytes written to the Socket.
+2024-05-04 15:33:30,888 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) throwing: java.sql.SQLRecoverableException: ORA-17002: I/O error: Socket read interrupted, Authentication lapse 0 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1441)
+	at oracle.jdbc.driver.T4CConnection.handleLogonInterruptedIOException(T4CConnection.java:1309)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:986)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1157)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:104)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:825)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:651)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: Socket read interrupted, Authentication lapse 0 ms.
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1436)
+	... 14 more
+Caused by: java.io.InterruptedIOException: Socket read interrupted
+	at oracle.net.nt.TimeoutSocketChannel.doSelect(TimeoutSocketChannel.java:706)
+	at oracle.net.nt.TimeoutSocketChannel.doSelectForRead(TimeoutSocketChannel.java:599)
+	at oracle.net.nt.TimeoutSocketChannel.read(TimeoutSocketChannel.java:501)
+	at oracle.net.ns.NSProtocolNIO.doSocketRead(NSProtocolNIO.java:1228)
+	at oracle.net.ns.NIOPacket.readHeader(NIOPacket.java:271)
+	at oracle.net.ns.NIOPacket.readPacketFromSocketChannel(NIOPacket.java:204)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:147)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:120)
+	at oracle.net.ns.NIONSDataChannel.readDataFromSocketChannel(NIONSDataChannel.java:105)
+	at oracle.jdbc.driver.T4CMAREngineNIO.prepareForUnmarshall(T4CMAREngineNIO.java:893)
+	at oracle.jdbc.driver.T4CMAREngineNIO.unmarshalUB1(T4CMAREngineNIO.java:464)
+	at oracle.jdbc.driver.T4C8TTIdty.receivePacket(T4C8TTIdty.java:891)
+	at oracle.jdbc.driver.T4C8TTIdty.doRPC(T4C8TTIdty.java:751)
+	at oracle.jdbc.driver.T4CConnection.negotiateSession(T4CConnection.java:3290)
+	at oracle.jdbc.driver.T4CConnection.negotiateTTC(T4CConnection.java:831)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:967)
+	... 12 more
+
+2024-05-04 15:33:30,889 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) properties={LOCALE=en_US, DriverVersion=23.3.0.23.09, java.library.path: =/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.class.path: =/home/sebastian/Documents/Proyecto-B2B/Hotel/backend/sistema-hoteles-be/target/sistema-hoteles-be-dev.jar, java.version: =21.0.2}. 
+2024-05-04 15:33:31,823 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': ORA-17002: I/O error: Socket read interrupted, Authentication lapse 0 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+2024-05-04 15:39:51,778 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-169) Inicio del proceso de creación de reserva. Fecha de ingreso: 2024-05-10, Fecha de salida: 2024-05-15
+2024-05-04 15:39:51,939 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-169) No se encontraron conflictos con otras reservas. Procediendo con la creación de la reserva.
+2024-05-04 15:39:52,032 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-169) Habitación encontrada. Tipo de habitación obtenido: 3
+2024-05-04 15:39:52,132 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-169) Reserva creada con éxito. ID de la reserva: 1107
+2024-05-04 15:44:13,021 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-185) Reserva con ID: 1107 ha sido cancelada
+2024-05-04 15:48:44,427 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-193) Inicio del proceso de creación de reserva. Fecha de ingreso: 2024-05-10, Fecha de salida: 2024-05-15
+2024-05-04 15:48:44,572 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-193) No se encontraron conflictos con otras reservas. Procediendo con la creación de la reserva.
+2024-05-04 15:48:44,713 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-193) Habitación encontrada. Tipo de habitación obtenido: 3
+2024-05-04 15:48:44,842 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-193) Reserva creada con éxito. ID de la reserva: 1108
+2024-05-04 15:49:44,867 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [pac.ReservasRecurso] (executor-thread-193) Reserva con ID: 1108 ha sido cancelada
+2024-05-04 16:53:20,912 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) entering args (oracle.jdbc.internal.AbstractConnectionBuilder$1@1f09c53c)
+2024-05-04 16:53:20,913 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=4F008149. 
+2024-05-04 16:53:20,915 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Session Attributes: 
+sdu=8192, tdu=2097152
+nt: host=35.211.214.127, port=1521, socketOptions={0=YES, 1=NO, 17=0, 18=false, 2=0, 20=true, 38=TLS, 23=40, 24=50, 40=false, 25=0}
+    socket=null
+client profile={oracle.net.encryption_types_client=(), oracle.net.crypto_seed=, oracle.net.authentication_services=(), oracle.net.setFIPSMode=false, oracle.net.kerberos5_mutual_authentication=false, oracle.net.encryption_client=ACCEPTED, oracle.net.crypto_checksum_client=ACCEPTED, oracle.net.crypto_checksum_types_client=()}
+connection options=[host=35.211.214.127 port=1521 protocol=TCP service_name=HOTPDB1 addr=(ADDRESS=(PROTOCOL=TCP)(HOST=35.211.214.127)(PORT=1521)) conn_data=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(PORT=1521)(HOST=35.211.214.127))(CONNECT_DATA=(CID=(PROGRAM=JDBC Thin Client)(HOST=sebastian-virtual-machine)(USER=sebastian))(SERVICE_NAME=HOTPDB1))) done=true]
+onBreakReset=false, dataEOF=false, negotiatedOptions=0x841, connected=false
+2024-05-04 16:53:20,916 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) traceId=4F008149, anoEnabled=true. 
+2024-05-04 16:53:20,917 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 16:53:21,885 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 8 bytes
+2024-05-04 16:53:21,886 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Got Resend, SessionTraceId = 4F008149
+2024-05-04 16:53:21,887 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 301 bytes written to the Socket.
+2024-05-04 16:53:21,888 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 45 bytes
+2024-05-04 16:53:21,889 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Connection established. Cleared conn strategy stack
+2024-05-04 16:53:21,890 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 11 bytes written to the Socket.
+2024-05-04 16:53:21,891 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) Sending break marker, SessionTraceId = 4F008149
+2024-05-04 16:53:21,892 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 33 bytes written to the Socket.
+2024-05-04 16:53:21,903 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 254 bytes
+2024-05-04 16:53:21,904 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,771 bytes written to the Socket.
+2024-05-04 16:53:21,905 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 2,705 bytes
+2024-05-04 16:53:21,906 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] FINEST [ora.jdbc] (agroal-11) 183 bytes written to the Socket.
+2024-05-04 16:53:21,908 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) throwing: java.sql.SQLRecoverableException: ORA-17002: I/O error: Socket read interrupted, Authentication lapse 2 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1441)
+	at oracle.jdbc.driver.T4CConnection.handleLogonInterruptedIOException(T4CConnection.java:1309)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:986)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1157)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:104)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:825)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:651)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: Socket read interrupted, Authentication lapse 2 ms.
+	at oracle.jdbc.driver.T4CConnection.handleLogonIOException(T4CConnection.java:1436)
+	... 14 more
+Caused by: java.io.InterruptedIOException: Socket read interrupted
+	at oracle.net.nt.TimeoutSocketChannel.doSelect(TimeoutSocketChannel.java:706)
+	at oracle.net.nt.TimeoutSocketChannel.doSelectForRead(TimeoutSocketChannel.java:599)
+	at oracle.net.nt.TimeoutSocketChannel.read(TimeoutSocketChannel.java:501)
+	at oracle.net.ns.NSProtocolNIO.doSocketRead(NSProtocolNIO.java:1228)
+	at oracle.net.ns.NIOPacket.readHeader(NIOPacket.java:271)
+	at oracle.net.ns.NIOPacket.readPacketFromSocketChannel(NIOPacket.java:204)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:147)
+	at oracle.net.ns.NIOPacket.readFromSocketChannel(NIOPacket.java:120)
+	at oracle.net.ns.NIONSDataChannel.readDataFromSocketChannel(NIONSDataChannel.java:105)
+	at oracle.jdbc.driver.T4CMAREngineNIO.prepareForUnmarshall(T4CMAREngineNIO.java:893)
+	at oracle.jdbc.driver.T4CMAREngineNIO.unmarshalUB1(T4CMAREngineNIO.java:464)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:949)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:456)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOSESSKEY(T4CTTIoauthenticate.java:792)
+	at oracle.jdbc.driver.T4CConnection.authenticateWithPassword(T4CConnection.java:1802)
+	at oracle.jdbc.driver.T4CConnection.authenticateUserForLogon(T4CConnection.java:1764)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:976)
+	... 12 more
+
+2024-05-04 16:53:21,909 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [ora.jdbc] (agroal-11) properties={LOCALE=en_US, DriverVersion=23.3.0.23.09, java.library.path: =/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, java.class.path: =/home/sebastian/Documents/Proyecto-B2B/Hotel/backend/sistema-hoteles-be/target/sistema-hoteles-be-dev.jar, java.version: =21.0.2}. 
+2024-05-04 16:53:22,413 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] WARN  [io.agr.pool] (agroal-11) Datasource '<default>': ORA-17002: I/O error: Socket read interrupted, Authentication lapse 2 ms.
+https://docs.oracle.com/error-help/db/ora-17002/
+2024-05-04 17:58:10,715 sebastian-virtual-machine sistema-hoteles-be-dev.jar[7604] INFO  [io.quarkus] (Shutdown thread) sistema-hoteles-be stopped in 0.048s

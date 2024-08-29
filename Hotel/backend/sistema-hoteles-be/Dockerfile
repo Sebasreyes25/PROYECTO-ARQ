@@ -21,10 +21,13 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el jar generado
-COPY --from=build /app/target/*.jar /app/app.jar
+COPY --from=build /app/target/quarkus-app/lib/ /app/lib/
+COPY --from=build /app/target/quarkus-app/*.jar /app/
+COPY --from=build /app/target/quarkus-app/app/ /app/app/
+COPY --from=build /app/target/quarkus-app/quarkus/ /app/quarkus/
 
 # Exponer el puerto
 EXPOSE 8080
 
 # Ejecutar la aplicación
-CMD ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "/app/quarkus-run.jar"]
