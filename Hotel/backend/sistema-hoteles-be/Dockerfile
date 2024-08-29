@@ -31,5 +31,3 @@ EXPOSE 8080
 
 # Ejecutar la aplicación
 CMD ["java", "-jar", "/app/quarkus-run.jar"]
-
-
