@@ -17,7 +17,7 @@ steps:
     environment:
       SONAR_HOST_URL: http://192.168.214.129:9000
       SONAR_LOGIN:
-        from_secret: squ_bc758fb61a80517d070f171c3f956c538571812d
+        from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
     commands:
       - cd Hotel/backend/sistema-hoteles-be
       - sonar-scanner -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
