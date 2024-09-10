@@ -7,10 +7,17 @@ WORKDIR /app
 # Copiar los archivos necesarios al contenedor
 COPY package.json .
 COPY package-lock.json .
+
+# Instalar las dependencias
+RUN npm install
+
+# Añadir la configuración para resolver el problema de OpenSSL
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# Copiar el resto de los archivos de la aplicación
 COPY . .
 
-# Instalar las dependencias y construir la aplicación
-RUN npm install
+# Construir la aplicación para producción
 RUN npm run build
 
 # Crear una segunda etapa más pequeña para servir la aplicación
@@ -24,5 +31,6 @@ EXPOSE 80
 
 # Ejecutar Nginx
 CMD ["nginx", "-g", "daemon off;"]
+
 
 
