@@ -15,7 +15,7 @@ steps:
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
-      SONAR_HOST_URL: http://localhost:9000
+      SONAR_HOST_URL: http://192.168.214.129:9000
       SONAR_LOGIN:
         from_secret: squ_bc758fb61a80517d070f171c3f956c538571812d
     commands:
@@ -36,6 +36,7 @@ trigger:
   event:
     - push
     - pull_request
+
 
 
 ---
