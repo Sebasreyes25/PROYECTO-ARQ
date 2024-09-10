@@ -16,7 +16,7 @@ steps:
     environment:
       SONAR_HOST_URL: https://fifty-pumas-mix.loca.lt
       SONAR_LOGIN:
-        from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
+        from_secret: squ_ae9f1f58e44e14493e5034742377319713dcd4d1
     commands:
       - cd Hotel/backend/sistema-hoteles-be
       - sonar-scanner -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
@@ -61,7 +61,7 @@ steps:
     environment:
       SONAR_HOST_URL: https://fifty-pumas-mix.loca.lt
       SONAR_LOGIN:
-        from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
+        from_secret: squ_ae9f1f58e44e14493e5034742377319713dcd4d1
     commands:
       - cd Hotel/frontend/sistema_hoteles
       - sonar-scanner -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
