@@ -1,0 +1,58 @@
+kind: pipeline
+type: docker
+name: backend-build
+
+steps:
+  - name: build-backend
+    image: maven:3.8.4-openjdk-11
+    environment:
+      QUARKUS_PROFILE: prod
+    commands:
+      - cd Hotel/backend/sistema-hoteles-be
+      - mvn clean install
+      - docker build -t mi-backend-quarkus .
+
+  - name: publish-backend
+    image: plugins/docker
+    settings:
+      repo: tu-dockerhub-usuario/mi-backend-quarkus
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
+  event:
+    - push
+    - pull_request
+
+---
+
+kind: pipeline
+type: docker
+name: frontend-build
+
+steps:
+  - name: build-frontend
+    image: node:14-alpine
+    commands:
+      - cd Hotel/frontend/sistema_hoteles
+      - npm install
+      - npm run build
+      - docker build -t mi-frontend-react .
+
+  - name: publish-frontend
+    image: plugins/docker
+    settings:
+      repo: tu-dockerhub-usuario/mi-frontend-react
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
+  event:
+    - push
+    - pull_request
