@@ -14,10 +14,9 @@ steps:
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
-      - SONAR_HOST_URL=https://fifty-pumas-mix.loca.lt
-      - SONAR_LOGIN
-    secrets:
-      - sonar_login
+      SONAR_HOST_URL: "https://fifty-pumas-mix.loca.lt"
+      SONAR_LOGIN:
+        from_secret: sonar_login
     commands:
       - cd Hotel/backend/sistema-hoteles-be
       - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
@@ -59,10 +58,9 @@ steps:
   - name: sonar-scan-frontend
     image: sonarsource/sonar-scanner-cli
     environment:
-      - SONAR_HOST_URL=https://fifty-pumas-mix.loca.lt
-      - SONAR_LOGIN
-    secrets:
-      - sonar_login
+      SONAR_HOST_URL: "https://fifty-pumas-mix.loca.lt"
+      SONAR_LOGIN:
+        from_secret: sonar_login
     commands:
       - cd Hotel/frontend/sistema_hoteles
       - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
@@ -85,12 +83,11 @@ trigger:
     - pull_request
     - custom
 
----
-
 secrets:
   - sonar_login
   - docker_username
   - docker_password
+
 
 
 
