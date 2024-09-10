@@ -15,7 +15,7 @@ steps:
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
-      SONAR_HOST_URL: http://192.168.214.129:9000
+      SONAR_HOST_URL: https://warm-toys-shop.loca.lt
       SONAR_LOGIN:
         from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
     commands:
@@ -25,7 +25,7 @@ steps:
   - name: publish-backend
     image: plugins/docker
     settings:
-      repo: tu-dockerhub-usuario/mi-backend-quarkus
+      repo: sebas234/mi-backend-quarkus
       tags: latest
       username:
         from_secret: docker_username
@@ -57,7 +57,7 @@ steps:
   - name: publish-frontend
     image: plugins/docker
     settings:
-      repo: tu-dockerhub-usuario/mi-frontend-react
+      repo: sebas234/mi-frontend-react
       tags: latest
       username:
         from_secret: docker_username
