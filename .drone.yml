@@ -9,8 +9,10 @@ steps:
       - echo "Pipeline is working!"
 
 trigger:
+  branch:
+    - main
   event:
     - push
     - pull_request
-    - tag
+
 
