@@ -12,6 +12,16 @@ steps:
       - mvn clean install
       - docker build -t mi-backend-quarkus .
 
+  - name: sonar-scan-backend
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      SONAR_HOST_URL: http://localhost:9000
+      SONAR_LOGIN:
+        from_secret: squ_bc758fb61a80517d070f171c3f956c538571812d
+    commands:
+      - cd Hotel/backend/sistema-hoteles-be
+      - sonar-scanner -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+
   - name: publish-backend
     image: plugins/docker
     settings:
@@ -26,6 +36,7 @@ trigger:
   event:
     - push
     - pull_request
+
 
 ---
 
