@@ -4,7 +4,7 @@ name: backend-build
 
 steps:
   - name: build-backend
-    image: drone/plugins/docker
+    image: plugins/docker
     environment:
       QUARKUS_PROFILE: prod
     commands:
@@ -13,10 +13,11 @@ steps:
       - docker build -t mi-backend-quarkus .
 
 
+
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
-      SONAR_HOST_URL: https://warm-toys-shop.loca.lt
+      SONAR_HOST_URL: https://fifty-pumas-mix.loca.lt
       SONAR_LOGIN:
         from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
     commands:
@@ -61,7 +62,7 @@ steps:
   - name: sonar-scan-frontend
     image: sonarsource/sonar-scanner-cli
     environment:
-      SONAR_HOST_URL: https://warm-toys-shop.loca.lt
+      SONAR_HOST_URL: https://fifty-pumas-mix.loca.lt
       SONAR_LOGIN:
         from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
     commands:
