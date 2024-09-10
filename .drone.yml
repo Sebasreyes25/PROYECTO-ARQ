@@ -66,6 +66,8 @@ steps:
     commands:
       - cd Hotel/frontend/sistema_hoteles
       - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=600
+    depends_on:
+      - sonar-scan-backend  
 
   - name: publish-frontend
     image: plugins/docker
@@ -78,6 +80,8 @@ steps:
         from_secret: docker_password
       dockerfile: Hotel/frontend/sistema_hoteles/Dockerfile
       context: Hotel/frontend/sistema_hoteles
+    depends_on:
+      - sonar-scan-frontend  
 
 trigger:
   event:
@@ -89,6 +93,8 @@ secrets:
   - sonar_login
   - docker_username
   - docker_password
+
+
 
 
 
