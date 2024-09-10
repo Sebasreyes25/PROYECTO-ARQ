@@ -19,7 +19,7 @@ steps:
         from_secret: squ_ae9f1f58e44e14493e5034742377319713dcd4d1
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - sonar-scanner -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+      - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
 
   - name: publish-backend
     image: plugins/docker
@@ -64,7 +64,7 @@ steps:
         from_secret: squ_ae9f1f58e44e14493e5034742377319713dcd4d1
     commands:
       - cd Hotel/frontend/sistema_hoteles
-      - sonar-scanner -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+      - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
 
   - name: publish-frontend
     image: plugins/docker
