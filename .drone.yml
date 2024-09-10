@@ -4,7 +4,7 @@ name: backend-build
 
 steps:
   - name: build-backend
-    image: maven:3.8.4-openjdk-11
+    image: maven:3.8.4-openjdk-17
     environment:
       QUARKUS_PROFILE: prod
     commands:
@@ -38,8 +38,6 @@ trigger:
     - pull_request
     - custom
 
-
-
 ---
 
 kind: pipeline
@@ -51,9 +49,20 @@ steps:
     image: node:14-alpine
     commands:
       - cd Hotel/frontend/sistema_hoteles
-      - npm install
+      - npm install --no-audit
       - npm run build
       - docker build -t mi-frontend-react .
+
+
+  - name: sonar-scan-frontend
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      SONAR_HOST_URL: https://warm-toys-shop.loca.lt
+      SONAR_LOGIN:
+        from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
+    commands:
+      - cd Hotel/frontend/sistema_hoteles
+      - sonar-scanner -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
 
   - name: publish-frontend
     image: plugins/docker
