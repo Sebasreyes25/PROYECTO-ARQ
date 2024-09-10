@@ -11,15 +11,21 @@ steps:
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
 
+  - name: debug-env-backend
+    image: busybox
+    commands:
+      - echo "SONAR_LOGIN: $SONAR_LOGIN"
+      - echo "SONAR_HOST_URL: $SONAR_HOST_URL"
+
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
       SONAR_HOST_URL: "https://fifty-pumas-mix.loca.lt"
       SONAR_LOGIN:
-        from_secret: "squ_ae9f1f58e44e14493e5034742377319713dcd4d1"
+        from_secret: sonar_login
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+      - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
 
   - name: publish-backend
     image: plugins/docker
@@ -39,7 +45,6 @@ trigger:
     - pull_request
     - custom
 
-
 ---
 
 kind: pipeline
@@ -56,12 +61,18 @@ steps:
       - npm install --no-audit
       - npm run build
 
+  - name: debug-env-frontend
+    image: busybox
+    commands:
+      - echo "SONAR_LOGIN: $SONAR_LOGIN"
+      - echo "SONAR_HOST_URL: $SONAR_HOST_URL"
+
   - name: sonar-scan-frontend
     image: sonarsource/sonar-scanner-cli
     environment:
       SONAR_HOST_URL: "https://fifty-pumas-mix.loca.lt"
       SONAR_LOGIN:
-        from_secret: "squ_ae9f1f58e44e14493e5034742377319713dcd4d1"
+        from_secret: sonar_login
     commands:
       - cd Hotel/frontend/sistema_hoteles
       - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
@@ -83,5 +94,7 @@ trigger:
     - push
     - pull_request
     - custom
+
+
 
 
