@@ -4,13 +4,14 @@ name: backend-build
 
 steps:
   - name: build-backend
-    image: maven:3.8.4-openjdk-17
+    image: docker:19.03
     environment:
       QUARKUS_PROFILE: prod
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
+      - apk add --no-cache maven openjdk17  
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
       - docker build -t mi-backend-quarkus .
@@ -35,11 +36,17 @@ steps:
       password:
         from_secret: docker_password
 
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+
 trigger:
   event:
     - push
     - pull_request
     - custom
+
 
 ---
 
@@ -49,19 +56,18 @@ name: frontend-build
 
 steps:
   - name: build-frontend
-    image: node:14-alpine
+    image: docker:19.03
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
     environment:
       CI: false
     commands:
+      - apk add --no-cache nodejs npm  
       - cd Hotel/frontend/sistema_hoteles
       - npm install --no-audit
       - npm run build
       - docker build -t mi-frontend-react .
-
-
 
   - name: sonar-scan-frontend
     image: sonarsource/sonar-scanner-cli
@@ -83,8 +89,14 @@ steps:
       password:
         from_secret: docker_password
 
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+
 trigger:
   event:
     - push
     - pull_request
     - custom
+
