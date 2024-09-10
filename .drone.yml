@@ -4,13 +4,14 @@ name: backend-build
 
 steps:
   - name: build-backend
-    image: maven:3.8.4-openjdk-17
+    image: drone/plugins/docker
     environment:
       QUARKUS_PROFILE: prod
     commands:
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
       - docker build -t mi-backend-quarkus .
+
 
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
@@ -47,11 +48,14 @@ name: frontend-build
 steps:
   - name: build-frontend
     image: node:14-alpine
+    environment:
+      CI: false
     commands:
       - cd Hotel/frontend/sistema_hoteles
       - npm install --no-audit
       - npm run build
       - docker build -t mi-frontend-react .
+
 
 
   - name: sonar-scan-frontend
