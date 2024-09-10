@@ -7,6 +7,9 @@ steps:
     image: maven:3.8.4-openjdk-17
     environment:
       QUARKUS_PROFILE: prod
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
     commands:
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
@@ -47,6 +50,9 @@ name: frontend-build
 steps:
   - name: build-frontend
     image: node:14-alpine
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
     environment:
       CI: false
     commands:
