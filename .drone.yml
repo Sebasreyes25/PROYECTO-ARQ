@@ -12,8 +12,6 @@ steps:
       - mvn clean install
       - docker build -t mi-backend-quarkus .
 
-
-
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     environment:
