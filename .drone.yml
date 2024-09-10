@@ -47,7 +47,6 @@ trigger:
     - pull_request
     - custom
 
-
 ---
 
 kind: pipeline
