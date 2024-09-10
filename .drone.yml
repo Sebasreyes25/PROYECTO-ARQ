@@ -4,7 +4,7 @@ name: backend-build
 
 steps:
   - name: build-backend
-    image: plugins/docker
+    image: maven:3.8.4-openjdk-17
     environment:
       QUARKUS_PROFILE: prod
     commands:
