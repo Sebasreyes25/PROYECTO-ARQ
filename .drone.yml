@@ -1,16 +1,71 @@
 kind: pipeline
 type: docker
-name: test-pipeline
+name: backend-build
 
 steps:
-  - name: test-step
-    image: alpine
+  - name: build-backend
+    image: maven:3.8.4-openjdk-11
+    environment:
+      QUARKUS_PROFILE: prod
     commands:
-      - echo "Pipeline is working!"
+      - cd Hotel/backend/sistema-hoteles-be
+      - mvn clean install
+      - docker build -t mi-backend-quarkus .
+
+  - name: sonar-scan-backend
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      SONAR_HOST_URL: https://warm-toys-shop.loca.lt
+      SONAR_LOGIN:
+        from_secret: squ_fee0b0c3a7a7792eabc285aecbf3dd0b7b6641be
+    commands:
+      - cd Hotel/backend/sistema-hoteles-be
+      - sonar-scanner -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN
+
+  - name: publish-backend
+    image: plugins/docker
+    settings:
+      repo: sebas234/mi-backend-quarkus
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
 
 trigger:
-  branch:
-    - main
+  event:
+    - push
+    - pull_request
+    - custom
+
+
+
+---
+
+kind: pipeline
+type: docker
+name: frontend-build
+
+steps:
+  - name: build-frontend
+    image: node:14-alpine
+    commands:
+      - cd Hotel/frontend/sistema_hoteles
+      - npm install
+      - npm run build
+      - docker build -t mi-frontend-react .
+
+  - name: publish-frontend
+    image: plugins/docker
+    settings:
+      repo: sebas234/mi-frontend-react
+      tags: latest
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
   event:
     - push
     - pull_request
