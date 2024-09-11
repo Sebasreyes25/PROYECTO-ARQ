@@ -70,7 +70,6 @@ secrets:
   - docker_password
 
 
-
 ---
 kind: pipeline
 type: docker
