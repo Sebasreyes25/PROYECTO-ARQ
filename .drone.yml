@@ -9,13 +9,13 @@ steps:
       QUARKUS_PROFILE: prod
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - mvn clean install
+      - mvn clean instal
 
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: ""
+      SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms/"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
@@ -37,6 +37,20 @@ steps:
       context: Hotel/backend/sistema-hoteles-be
     depends_on:
       - sonar-scan-backend
+  - name: notify-email
+    image: drillster/drone-email
+    settings:
+      host: smtp.gmail.com   
+      username: emailjsReyes@gmail.com     
+      password: contrasena123       
+      from: emailjsReyes@gmail.com 
+      recipients:
+        - jpestrada@unis.edu.gt
+        - juanpablo08082002@hotmail.com
+      subject: "Drone Build Notification"
+      when:
+        status:
+          - failure 
 
 trigger:
   event:
@@ -49,19 +63,6 @@ secrets:
   - docker_username
   - docker_password
 
-notificationRules:
-    - name: Failure-Email
-      identifier: FailureEmail
-      pipelineEvents:
-        - type: PipelineFailed
-      notificationMethod:
-        type: Email
-        spec:
-          userGroups: []
-          recipients:
-            - jpestrada@unis.edu.gt
-            - juanpablo08082002@hotmail.com
-      enabled: true
 ---
 kind: pipeline
 type: docker
@@ -101,18 +102,6 @@ secrets:
   - docker_username
   - docker_password
 
-notificationRules:
-    - name: Failure-Email
-      identifier: FailureEmail
-      pipelineEvents:
-        - type: PipelineFailed
-      notificationMethod:
-        type: Email
-        spec:
-          userGroups: []
-          recipients:
-            - jpestrada@unis.edu.gt
-            - juanpablo08082002@hotmail.com
-      enabled: true
+
 
 
