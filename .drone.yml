@@ -37,6 +37,7 @@ steps:
       context: Hotel/backend/sistema-hoteles-be
     depends_on:
       - sonar-scan-backend
+
   - name: notify-email
     image: drillster/drone-email
     settings:
@@ -48,9 +49,9 @@ steps:
         - jpestrada@unis.edu.gt
         - juanpablo08082002@hotmail.com
       subject: "Drone Build Notification"
-      when:
-        status:
-          - failure 
+    when:
+      status:
+        - failure 
 
 trigger:
   event:
