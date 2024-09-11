@@ -20,7 +20,7 @@ steps:
         from_secret: sonar_login
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=1000 -Dsonar.java.binaries=target/classes -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+      - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=3000 -Dsonar.java.binaries=target/classes -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
     depends_on:
       - build-backend
 
