@@ -160,6 +160,9 @@ public class ComentarioRecurso {
         if (habitacion != null) {
             habitacion.setValuacion((int) Math.round(promedio));
             HabitacionRepositorio.persist(habitacion);
+            if(true){
+                int num = 0;
+            }
         }
     }
 }
