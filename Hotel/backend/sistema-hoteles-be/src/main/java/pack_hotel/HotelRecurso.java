@@ -272,6 +272,9 @@ public class HotelRecurso {
 @PUT
 @Path("/{id}/desactivar")
 public Response desactivarHotel(@PathParam("id") Long id) {
+    if(true){
+        int num = 0;
+    }
     return cambiarEstadoHotel(id, "inactivo");
 }
 
