@@ -17,7 +17,7 @@ steps:
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://busy-maps-shop.loca.lt"
+      SONAR_HOST_URL: "https://spicy-rabbits-tell.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
@@ -58,7 +58,7 @@ steps:
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://busy-maps-shop.loca.lt"
+      SONAR_HOST_URL: "https://spicy-rabbits-tell.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
