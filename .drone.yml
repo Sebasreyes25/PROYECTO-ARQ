@@ -38,6 +38,7 @@ steps:
     depends_on:
       - sonar-scan-backend
 
+  # Email notification step
   - name: notify-email
     image: drillster/drone-email
     settings:
@@ -51,7 +52,11 @@ steps:
       subject: "Drone Build Notification"
     when:
       status:
-        - failure 
+        - failure
+    depends_on:
+      - build-backend
+      - sonar-scan-backend
+      - publish-backend
     failure: true
 
 trigger:
@@ -64,6 +69,7 @@ secrets:
   - sonar_login
   - docker_username
   - docker_password
+
 
 
 ---
