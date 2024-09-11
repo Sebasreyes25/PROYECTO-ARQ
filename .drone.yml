@@ -48,6 +48,20 @@ secrets:
   - sonar_login
   - docker_username
   - docker_password
+
+notificationRules:
+    - name: Failure-Email
+      identifier: FailureEmail
+      pipelineEvents:
+        - type: PipelineFailed
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - jpestrada@unis.edu.gt
+            - juanpablo08082002@hotmail.com
+      enabled: true
 ---
 kind: pipeline
 type: docker
@@ -86,5 +100,19 @@ trigger:
 secrets:
   - docker_username
   - docker_password
+
+notificationRules:
+    - name: Failure-Email
+      identifier: FailureEmail
+      pipelineEvents:
+        - type: PipelineFailed
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - jpestrada@unis.edu.gt
+            - juanpablo08082002@hotmail.com
+      enabled: true
 
 
