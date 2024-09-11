@@ -1,9 +1,8 @@
 kind: pipeline
 type: docker
-name: combined-build
+name: backend-build
 
 steps:
-  # Build del backend
   - name: build-backend
     image: maven:3.8.4-openjdk-17
     environment:
@@ -12,12 +11,11 @@ steps:
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
 
-  # SonarQube scan del backend
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://spicy-rabbits-tell.loca.lt"
+      SONAR_HOST_URL: "https://chilly-pets-grin.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
@@ -26,7 +24,6 @@ steps:
     depends_on:
       - build-backend
 
-  # Publicación del backend
   - name: publish-backend
     image: plugins/docker
     settings:
@@ -41,7 +38,22 @@ steps:
     depends_on:
       - sonar-scan-backend
 
-  # Build del frontend
+trigger:
+  event:
+    - push
+    - pull_request
+    - custom
+
+secrets:
+  - sonar_login
+  - docker_username
+  - docker_password
+---
+kind: pipeline
+type: docker
+name: frontend-build
+
+steps:
   - name: build-frontend
     image: node:14-alpine
     environment:
@@ -50,24 +62,7 @@ steps:
       - cd Hotel/frontend/sistema_hoteles
       - npm install --no-audit
       - npm run build
-    depends_on:
-      - publish-backend
 
-  # SonarQube scan del frontend
-  - name: sonar-scan-frontend
-    image: sonarsource/sonar-scanner-cli
-    user: root
-    environment:
-      SONAR_HOST_URL: "https://spicy-rabbits-tell.loca.lt"
-      SONAR_LOGIN:
-        from_secret: sonar_login
-    commands:
-      - cd Hotel/frontend/sistema_hoteles
-      - sonar-scanner -X -Dsonar.projectKey=frontend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=600
-    depends_on:
-      - build-frontend
-
-  # Publicación del frontend
   - name: publish-frontend
     image: plugins/docker
     settings:
@@ -80,7 +75,7 @@ steps:
       dockerfile: Hotel/frontend/sistema_hoteles/Dockerfile
       context: Hotel/frontend/sistema_hoteles
     depends_on:
-      - sonar-scan-frontend
+      - build-frontend
 
 trigger:
   event:
@@ -89,7 +84,7 @@ trigger:
     - custom
 
 secrets:
-  - sonar_login
   - docker_username
   - docker_password
+
 
