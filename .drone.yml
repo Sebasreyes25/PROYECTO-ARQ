@@ -15,7 +15,7 @@ steps:
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://chilly-pets-grin.loca.lt"
+      SONAR_HOST_URL: "https://five-schools-follow.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
