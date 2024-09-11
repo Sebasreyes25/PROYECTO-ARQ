@@ -42,7 +42,7 @@ steps:
     settings:
       host: smtp.gmail.com   
       username: emailjsReyes@gmail.com     
-      password: contrasena123       
+      password: rqsn hmgf niuo vjut        
       from: emailjsReyes@gmail.com 
       recipients:
         - jpestrada@unis.edu.gt
