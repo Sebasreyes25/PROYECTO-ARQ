@@ -9,13 +9,13 @@ steps:
       QUARKUS_PROFILE: prod
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - mvn clean instal
+      - mvn clean install
 
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms/"
+      SONAR_HOST_URL: ""
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
