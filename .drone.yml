@@ -16,7 +16,7 @@ steps:
     user: root
     environment:
       SONAR_SCANNER_OPTS: "-Xmx2g"
-      SONAR_HOST_URL: "https://ac70-186-151-92-9.ngrok-free.app"
+      SONAR_HOST_URL: "https://curly-kids-yawn.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
