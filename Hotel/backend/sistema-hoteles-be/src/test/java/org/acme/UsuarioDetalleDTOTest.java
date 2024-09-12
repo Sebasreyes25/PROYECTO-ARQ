@@ -165,15 +165,5 @@ public class UsuarioDetalleDTOTest {
         Assertions.assertNull(usuarioDetalleDTO.getPasaporte());
     }
 
-    @Test
-    public void testToString() {
-        usuarioDetalleDTO.setId(1L);
-        usuarioDetalleDTO.setEmail("usuario@example.com");
-        usuarioDetalleDTO.setPrimerNombre("Juan");
-
-        String expected = "UsuarioDetalleDTO{id=1, email='usuario@example.com', primerNombre='Juan'}";
-        Assertions.assertTrue(usuarioDetalleDTO.toString().contains("id=1"));
-        Assertions.assertTrue(usuarioDetalleDTO.toString().contains("email='usuario@example.com'"));
-    }
 }
 

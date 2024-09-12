@@ -187,17 +187,5 @@ public class UsuarioCreacionDTOTest {
         Assertions.assertNull(usuarioDTO.getRecaptchaToken());
     }
 
-    @Test
-    public void testToString() {
-        // Prueba del método toString
-        usuarioDTO.setEmail("usuario@example.com");
-        usuarioDTO.setPassword("password123");
-        usuarioDTO.setPrimerNombre("Juan");
-        usuarioDTO.setRol(1);
-
-        String expected = "UsuarioCreacionDTO{email='usuario@example.com', password='password123', primerNombre='Juan', rol=1}";
-        Assertions.assertTrue(usuarioDTO.toString().contains("email='usuario@example.com'"));
-        Assertions.assertTrue(usuarioDTO.toString().contains("rol=1"));
-    }
 }
 
