@@ -16,7 +16,7 @@ steps:
     user: root
     environment:
       SONAR_SCANNER_OPTS: "-Xmx2g"
-      SONAR_HOST_URL: "https://curly-kids-yawn.loca.lt"
+      SONAR_HOST_URL: "https://thick-pants-lead.loca.lt"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
