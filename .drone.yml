@@ -72,6 +72,8 @@ secrets:
 
 
 ---
+
+
 kind: pipeline
 type: docker
 name: frontend-build
