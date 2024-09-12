@@ -16,7 +16,7 @@ steps:
     user: root
     environment:
       SONAR_SCANNER_OPTS: "-Xmx2g"
-      SONAR_HOST_URL: "http://localhost:9000"
+      SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
