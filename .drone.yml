@@ -63,7 +63,8 @@ steps:
 trigger:
   event:
     - push
-
+    - pull_request
+    - custom
 
 secrets:
   - sonar_login
@@ -105,7 +106,8 @@ steps:
 trigger:
   event:
     - push
-
+    - pull_request
+    - custom
 
 secrets:
   - docker_username
