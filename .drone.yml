@@ -15,7 +15,7 @@ steps:
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_SCANNER_OPTS: "-Xmx2g"
+      SONAR_SCANNER_OPTS: "-Xmx4g"
       SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms/"
       SONAR_LOGIN:
         from_secret: sonar_login
