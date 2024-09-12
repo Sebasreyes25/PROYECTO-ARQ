@@ -18,9 +18,13 @@ public class ImagenAmenidadTest {
 
     @Test
     public void testSetAndGetIdImagen() {
-        Long idImagen = 1L;
+        Long idImagen = 100L;
         imagenAmenidad.setIdImagen(idImagen);
         Assertions.assertEquals(idImagen, imagenAmenidad.getIdImagen());
+
+        Long nuevoIdImagen = 200L;
+        imagenAmenidad.setIdImagen(nuevoIdImagen);
+        Assertions.assertEquals(nuevoIdImagen, imagenAmenidad.getIdImagen());
     }
 
     @Test
@@ -28,6 +32,12 @@ public class ImagenAmenidadTest {
         imagenAmenidad.setHotel(hotel);
         Assertions.assertEquals(hotel, imagenAmenidad.getHotel());
         Assertions.assertEquals(1L, imagenAmenidad.getHotel().getId_hotel()); 
+
+        Hoteles nuevoHotel = new Hoteles();
+        nuevoHotel.setId_hotel(2L);
+        imagenAmenidad.setHotel(nuevoHotel);
+        Assertions.assertEquals(nuevoHotel, imagenAmenidad.getHotel());
+        Assertions.assertEquals(2L, imagenAmenidad.getHotel().getId_hotel());
     }
 
     @Test
@@ -35,6 +45,22 @@ public class ImagenAmenidadTest {
         String urlImagen = "http://example.com/imagen.jpg";
         imagenAmenidad.setUrlImagen(urlImagen);
         Assertions.assertEquals(urlImagen, imagenAmenidad.getUrlImagen());
+
+        String nuevaUrlImagen = "http://example.com/nueva-imagen.jpg";
+        imagenAmenidad.setUrlImagen(nuevaUrlImagen);
+        Assertions.assertEquals(nuevaUrlImagen, imagenAmenidad.getUrlImagen());
+    }
+
+    @Test
+    public void testSetAndGetUrlImagenNull() {
+        imagenAmenidad.setUrlImagen(null);
+        Assertions.assertNull(imagenAmenidad.getUrlImagen());
+    }
+
+    @Test
+    public void testHotelWithNull() {
+        imagenAmenidad.setHotel(null);
+        Assertions.assertNull(imagenAmenidad.getHotel());
     }
 }
 
