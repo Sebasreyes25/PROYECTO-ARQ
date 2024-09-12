@@ -15,12 +15,13 @@ steps:
     image: sonarsource/sonar-scanner-cli
     user: root
     environment:
-      SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms/"
+      SONAR_HOST_URL: "https://vsxb2x8g-9000.use2.devtunnels.ms"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
       - cd Hotel/backend/sistema-hoteles-be
-      - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=1200 -Dsonar.java.binaries=target/classes -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+      - sonar-scanner -X -Dsonar.projectKey=backend -Dsonar.sources=./ -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.ws.timeout=1200 -Dsonar.java.binaries=target/classes -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml -Dsonar.verbose=true
+
     depends_on:
       - build-backend
 
