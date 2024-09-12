@@ -71,9 +71,7 @@ secrets:
   - docker_username
   - docker_password
 
-  
 ---
-
 
 kind: pipeline
 type: docker
