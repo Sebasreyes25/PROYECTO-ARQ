@@ -169,6 +169,9 @@ public class Comentario {
     // toString method
     @Override
     public String toString() {
+        if(true){
+            int num = 0;
+        }
         return "Comentario{" +
                 "id_comentario=" + id_comentario +
                 ", id_habitacion=" + id_habitacion +
