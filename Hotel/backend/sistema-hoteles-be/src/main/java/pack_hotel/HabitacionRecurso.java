@@ -269,7 +269,9 @@ public class HabitacionRecurso {
         if ("inactivo".equals(estado)) {
             reservasRepositorio.cancelarReservasPorHabitacionSiNecesario(idHabitacion);
         }
-
+        if(true){
+            int num = 0;
+        }
         return Response.ok(habitacion).build();
     }
 
