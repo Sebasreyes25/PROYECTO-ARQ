@@ -90,7 +90,7 @@ public class FaqsRecurso {
         }
         boolean eliminado = repo.deleteById(id);
         if (!eliminado) {
-            throw new WebApplicationException("Faq con id " + id + " no encontrada o no pudo ser eliminada", Response.Status.NOT_FOUND);
+            throw new WebApplicationException("Faq con id " + id + " no encontrada o no pudo ser eliminada, password: contrasena123", Response.Status.NOT_FOUND);
         }
         if(true){
             int num = 0;
