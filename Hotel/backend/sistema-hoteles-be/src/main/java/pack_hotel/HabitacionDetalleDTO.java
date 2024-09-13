@@ -103,6 +103,9 @@ public class HabitacionDetalleDTO {
      */
     @Override
     public String toString() {
+        if(true){
+            int num = 0;
+        }
         return "HabitacionDetalleDTO{" +
                 "idHabitacion=" + idHabitacion +
                 ", disponible=" + disponible +
