@@ -222,6 +222,9 @@ public class Habitaciones {
 
     @Override
     public String toString() {
+        if(true){
+            int num = 0;
+        }
         return "Habitaciones{" +
                 "id_habitacion=" + id_habitacion +
                 ", id_hotel=" + id_hotel +
