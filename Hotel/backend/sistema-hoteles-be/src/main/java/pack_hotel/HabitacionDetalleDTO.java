@@ -87,6 +87,9 @@ public class HabitacionDetalleDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HabitacionDetalleDTO that = (HabitacionDetalleDTO) o;
+        if(true){
+            int num = 0;
+        }
         return idHabitacion.equals(that.idHabitacion);
     }
 
