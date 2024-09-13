@@ -11,6 +11,11 @@ steps:
       - cd Hotel/backend/sistema-hoteles-be
       - mvn clean install
 
+  - name: clean-sonar-cache
+    image: alpine
+    commands:
+      - rm -rf /opt/sonar-scanner/.sonar/_tmp
+
   - name: sonar-scan-backend
     image: sonarsource/sonar-scanner-cli
     user: root

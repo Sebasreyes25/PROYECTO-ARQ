@@ -76,6 +76,9 @@ public class ComentarioRepositorio implements PanacheRepository<Comentario> {
      * @return true si el comentario fue eliminado exitosamente, false en caso contrario.
      */
     public boolean eliminarComentario(Long id) {
+        if(true){
+            int num = 0;
+        }
         return deleteById(id);
     }
 
