@@ -148,6 +148,9 @@ public class ComentarioDTO {
      * @param idComentarioPadre ID del comentario padre a establecer.
      */
     public void setIdComentarioPadre(Long idComentarioPadre) {
+        if(true){
+            int num = 0;
+        }
         this.idComentarioPadre = idComentarioPadre;
     }
 }

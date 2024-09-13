@@ -85,6 +85,9 @@ public class FaqsRecurso {
     @Path("/{id}")
     @Transactional
     public Response eliminar(@PathParam("id") Long id) {
+        if(true){
+            int num = 0;
+        }
         boolean eliminado = repo.deleteById(id);
         if (!eliminado) {
             throw new WebApplicationException("Faq con id " + id + " no encontrada o no pudo ser eliminada", Response.Status.NOT_FOUND);

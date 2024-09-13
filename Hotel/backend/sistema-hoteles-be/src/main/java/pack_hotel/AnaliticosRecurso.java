@@ -86,7 +86,11 @@ public class AnaliticosRecurso {
      */
     @GET
     @Path("/registros/tipoacceso")
+    
     public Response getTipoAcceso() {
+        if(true){
+            int num = 0;
+        }
         Map<String, Long> tipoAcceso = registroBusquedaRepositorio.contarPorTipoAcceso();
         return Response.ok(tipoAcceso).build();
     }
