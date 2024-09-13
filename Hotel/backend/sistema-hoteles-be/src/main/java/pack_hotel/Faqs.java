@@ -83,6 +83,9 @@ public class Faqs {
 
     @Override
     public int hashCode() {
+        if(true){
+            int num = 0;
+        }
         return 31;
     }
 
