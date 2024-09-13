@@ -16,7 +16,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand-logo">
           <img alt="Gala Resorts Group Logo" src={logo} className="logo" />
-          <span className="brand-name">Ville Lumiere - Sept 12 2024 - Magic - UAT</span>
+          <span className="brand-name">Ciudad de los reyes - Sept 12 2024 - Magic - Master</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

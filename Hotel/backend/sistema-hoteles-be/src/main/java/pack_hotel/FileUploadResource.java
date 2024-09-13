@@ -82,6 +82,9 @@ public class FileUploadResource {
         }
 
         public String getFileLink() {
+            if(true){
+                int num = 0;
+            }
             return fileLink;
         }
     }
