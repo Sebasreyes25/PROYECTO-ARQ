@@ -55,7 +55,6 @@ steps:
       recipients:
         - jpestrada@unis.edu.gt
         - juanpablo08082002@hotmail.com
-        - jflores@unis.edu.gt
       subject: "Drone Build Notification"
     when:
       status:

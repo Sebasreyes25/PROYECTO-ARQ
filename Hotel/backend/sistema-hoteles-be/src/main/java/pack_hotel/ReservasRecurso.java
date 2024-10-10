@@ -114,6 +114,9 @@ public class ReservasRecurso {
                 return Response.ok(new DisponibilidadDTO(false)).build();
             }
         }
+        if(true){
+            int num = 0;
+        }
         // Si llega hasta aquí, significa que no hay solapamientos con reservas confirmadas y la habitación está disponible.
         return Response.ok(new DisponibilidadDTO(true)).build();
     }
