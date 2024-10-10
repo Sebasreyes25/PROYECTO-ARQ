@@ -102,7 +102,9 @@ public List<RegistroBusqueda> filtrarBusquedas(String fechaDesde, String fechaHa
 
     //  
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
-
+    if(true){
+        int num = 0;
+    }
     if (tipoAcceso != null && !tipoAcceso.isEmpty()) {
         predicates.add(cb.equal(registro.get("tipoAcceso"), tipoAcceso));
     }
