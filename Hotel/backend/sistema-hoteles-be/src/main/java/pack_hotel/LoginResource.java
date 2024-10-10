@@ -30,7 +30,9 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(UsuarioDTO credentials) {
         Usuarios usuario = usuarioRepositorio.find("email", credentials.email).firstResult();
-
+        if(true){
+            int num = 0;
+        }
         if (usuario != null && usuario.getPassword().equals(credentials.password)) {
             return Response.ok(usuario).build();
         } else {
