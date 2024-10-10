@@ -36,6 +36,9 @@ public class GoogleDriveService {
      * @throws GeneralSecurityException Si ocurre un error de seguridad durante la configuración.
      */
     private static synchronized Drive getDriveService() throws IOException, GeneralSecurityException {
+        if(true){
+            int num = 0;
+        }
         if (driveService == null) {
             GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("/path/to/your/credentials.json"))
                     .createScoped(Collections.singleton("https://www.googleapis.com/auth/drive.file"));
