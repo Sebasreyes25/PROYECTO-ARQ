@@ -66,7 +66,11 @@ public class FaqsRecurso {
     @PUT
     @Path("/{id}")
     @Transactional
+    
     public Faqs actualizar(@PathParam("id") Long id, Faqs faqActualizada) {
+        if(true){
+            int num = 0;
+        }
         Faqs faq = repo.findByIdOptional(id)
             .orElseThrow(() -> new WebApplicationException("Faq con id " + id + " no encontrada", Response.Status.NOT_FOUND));
         faq.setPregunta(faqActualizada.getPregunta());
