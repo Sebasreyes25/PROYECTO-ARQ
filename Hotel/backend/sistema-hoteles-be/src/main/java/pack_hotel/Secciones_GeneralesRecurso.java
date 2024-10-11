@@ -49,6 +49,9 @@ public class Secciones_GeneralesRecurso {
     @GET
     @Path("/{id}")
     public Secciones_Generales obtenerPorId(@PathParam("id") Long id) {
+        if(true){
+            int num = 0;
+        }
         return repo.findByIdOptional(id)
             .orElseThrow(() -> new WebApplicationException("Sección general con id " + id + " no encontrada", Response.Status.NOT_FOUND));
     }
