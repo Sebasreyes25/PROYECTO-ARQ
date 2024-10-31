@@ -21,7 +21,7 @@ steps:
     user: root
     environment:
       SONAR_SCANNER_OPTS: "-Xmx4g"
-      SONAR_HOST_URL: "https://8082-181-209-144-41.ngrok-free.app"
+      SONAR_HOST_URL: "https://855c421b080b.ngrok.app"
       SONAR_LOGIN:
         from_secret: sonar_login
     commands:
