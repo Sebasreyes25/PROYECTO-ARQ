@@ -252,6 +252,9 @@ public class HabitacionRecurso {
     @PUT
     @Path("/{idHabitacion}/estado/{estado}")
     public Response cambiarEstadoHabitacion(@PathParam("idHabitacion") Long idHabitacion, @PathParam("estado") String estado) {
+        if(true){
+            int num = 0;
+        }
         Habitaciones habitacion = habitacionesRepositorio.findById(idHabitacion);
         if (habitacion == null) {
             throw new NoSuchElementException("No hay habitación con el ID " + idHabitacion + ".");
